@@ -1,0 +1,19 @@
+<table border="1">
+	<tr>
+		<th>Id</th>
+		<th>Nom</th>
+        <th>others</th>
+
+	</tr>
+	{% for dep in list %}
+		<tr>
+			<td>{{dep.id}}</td>
+			<td>{{dep.nom}}</td>
+              <td>
+
+            <a href="{{ path('app_editplayer', {'id': dep.id}) }}">edit</a>
+            <a href="{{ path('app_deleteplayer', {'id': dep.id}) }}">delete</a>
+		</tr>
+        </tr>    
+	{% endfor %}
+</table>

@@ -1,0 +1,25 @@
+<table border="1">
+	<tr>
+		<th>Id</th>
+		<th>Nom</th>
+		<th>date</th>
+        <th>others</th>
+
+
+	</tr>
+	{% for dep in list %}
+
+		<tr>
+			<td>{{dep.id}}</td>
+			<td>{{dep.name}}</td>
+			<td>{{dep.date|date('d/m/Y')}}</td>
+
+        <td>
+
+            <a href="{{ path('app_editGame', {'id': dep.id}) }}">edit</a>
+            <a href="{{ path('app_deleteGame', {'id': dep.id}) }}">delete</a>
+
+		</tr>
+
+	{% endfor %}
+</table>
